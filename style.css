@@ -12,29 +12,40 @@ body {
 }
 
 /* --- CUSTOM CURSOR --- */
-body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
+body,
+a,
+button,
+.sm-hamburger,
+.sm-logo-link,
+.sm-menu-item {
     cursor: url('https://i.postimg.cc/90mv77p9/banana-world-1-cropped.png') 9 2, auto !important;
 }
 
 /* --- HEADER LAYOUT (FIXED) --- */
 .sm-header {
-    position: fixed; /* Fixed to top */
+    position: fixed;
+    /* Fixed to top */
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center; /* Align Center */
+    justify-content: center;
+    /* Align Center */
     align-items: center;
-    padding: 20px; /* Match Mobile Hamburger Padding */
+    padding: 20px;
+    /* Match Mobile Hamburger Padding */
     box-sizing: border-box;
-    z-index: 10000; /* Higher than menu (9990) to stay visible */
-    background-color: #000; /* Mobile: Black Header Block */
-    pointer-events: auto;   /* Mobile: Solid header */
+    z-index: 10000;
+    /* Higher than menu (9990) to stay visible */
+    background-color: #000;
+    /* Mobile: Black Header Block */
+    pointer-events: auto;
+    /* Mobile: Solid header */
 }
 
 /* --- LOGO STYLES (IMAGE) --- */
 .sm-logo-container {
-    position: relative; 
+    position: relative;
     pointer-events: auto;
 }
 
@@ -45,52 +56,54 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
 
 .sm-logo-img {
     display: block;
-    width: 180px; /* Stretched Width Mobile */
+    width: 180px;
+    /* Stretched Width Mobile */
     height: auto;
     object-fit: contain;
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    
+
     /* Volumetric Shadow for Image + Darkened for Mobile */
-    filter: 
-        brightness(0.7)
-        drop-shadow(0px 5px 5px rgba(0,0,0,0.5))
-        drop-shadow(0px 0px 10px rgba(255,255,255,0.1));
+    filter:
+        brightness(0.7) drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
 }
 
 /* Hover Effect */
 .sm-logo-link:hover .sm-logo-img {
     transform: scale(1.02) translateY(-2px);
-    
+
     /* Enhanced Glow on Hover */
-    filter: 
-        drop-shadow(0px 20px 20px rgba(0,0,0,0.9)) 
-        drop-shadow(0px 0px 25px rgba(255,255,255,0.15))
-        brightness(1.1);
+    filter:
+        drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.9)) drop-shadow(0px 0px 25px rgba(255, 255, 255, 0.15)) brightness(1.1);
 }
 
 /* --- DESKTOP ADJUSTMENTS --- */
 @media (min-width: 768px) {
     .sm-header {
-        padding: 40px; /* Match Desktop Hamburger Padding */
-        background-color: transparent; /* Transparent Desktop */
-        pointer-events: none; /* Click-through on desktop */
+        padding: 40px;
+        /* Match Desktop Hamburger Padding */
+        background-color: transparent;
+        /* Transparent Desktop */
+        pointer-events: none;
+        /* Click-through on desktop */
     }
+
     .sm-logo-container {
         padding: 0;
     }
+
     .sm-logo-img {
-        width: 450px; /* Stretched Width Desktop */
+        width: 450px;
+        /* Stretched Width Desktop */
         /* Restore brightness on desktop */
-        filter: 
-            brightness(1)
-            drop-shadow(0px 5px 5px rgba(0,0,0,0.5))
-            drop-shadow(0px 0px 10px rgba(255,255,255,0.1));
+        filter:
+            brightness(1) drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
     }
 }
 
 /* --- HAMBURGER BUTTON (FIXED) --- */
 .sm-hamburger {
-    position: fixed; /* Always stays in corner */
+    position: fixed;
+    /* Always stays in corner */
     top: 25px;
     right: 20px;
     width: 30px;
@@ -103,12 +116,14 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     justify-content: space-between;
     cursor: pointer;
     pointer-events: auto;
-    z-index: 10001; /* Very high */
+    z-index: 10001;
+    /* Very high */
 }
 
 @media (min-width: 768px) {
     .sm-hamburger {
-        top: 35px; /* Aligns visually with padding */
+        top: 35px;
+        /* Aligns visually with padding */
         right: 40px;
     }
 }
@@ -117,7 +132,8 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #d1d5db; /* Gray-300 */
+    background-color: #d1d5db;
+    /* Gray-300 */
     opacity: 0.8;
     transition: all 0.3s ease-in-out;
 }
@@ -155,7 +171,7 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-20px);
-    transition: all 0.5s cubic-bezier(0.77,0,0.175,1);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     overflow: hidden;
 }
 
@@ -170,12 +186,14 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     inset: 0;
     z-index: 0;
 }
+
 .sm-menu-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: none;
 }
+
 .sm-menu-fallback {
     width: 100%;
     height: 100%;
@@ -184,15 +202,21 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     background-position: center;
     filter: brightness(0.2);
 }
+
 .sm-menu-dark-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 @media (min-width: 768px) {
-    .sm-menu-video { display: block; }
-    .sm-menu-fallback { display: none; }
+    .sm-menu-video {
+        display: block;
+    }
+
+    .sm-menu-fallback {
+        display: none;
+    }
 }
 
 .sm-menu-list {
@@ -214,7 +238,7 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     letter-spacing: 4px;
     text-decoration: none;
     transition: all 0.3s ease-out;
-    background-image: 
+    background-image:
         url('https://www.transparenttextures.com/patterns/cracked-concrete.png'),
         linear-gradient(180deg, #8f8f8f 0%, #4a4a4a 80%, #2b2b2b 100%);
     background-size: 150px, 100%;
@@ -223,105 +247,179 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.9)) blur(0.6px) contrast(1.3);
-    -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.9)) blur(0.6px) contrast(1.3);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
 }
 
 .sm-menu-item:hover {
     transform: scale(1.05);
     letter-spacing: 6px;
-    filter: drop-shadow(0px 4px 8px rgba(0,0,0,1)) blur(0px) contrast(1.5) brightness(1.2);
-    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 1)) blur(0px) contrast(1.5) brightness(1.2);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
 }
 
 @media (min-width: 768px) {
-    .sm-menu-item { font-size: 3.75rem; }
-    .sm-menu-list { gap: 1.5rem; }
+    .sm-menu-item {
+        font-size: 3.75rem;
+    }
+
+    .sm-menu-list {
+        gap: 1.5rem;
+    }
 }
 
 /* ==========================================================================
    2. Posts Section & Dynamic Cards
    ========================================================================== */
 #sm-block-wrapper {
-    position: relative; width: 100%; min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center;
-    padding: 20px 20px 100px 20px; box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 100px 20px;
+    box-sizing: border-box;
 }
 
 /* ИСПРАВЛЕНИЕ ФОНА ДЛЯ МОБИЛЬНЫХ */
 .sm-bg-layer {
-    position: fixed; 
-    top: -10vh; /* Выносим за пределы экрана сверху */
-    left: 0; 
-    width: 100%; 
-    height: 120vh; /* Делаем высоту с запасом, чтобы скрытие адресной строки не дергало фон */
-    z-index: 0; 
-    pointer-events: none; 
+    position: fixed;
+    top: -10vh;
+    /* Выносим за пределы экрана сверху */
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    /* Делаем высоту с запасом, чтобы скрытие адресной строки не дергало фон */
+    z-index: 0;
+    pointer-events: none;
     background-color: #000;
 }
 
-.sm-bg-video { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); display: none; }
-.sm-bg-image { 
-    width: 100%; height: 100%; display: block; 
+.sm-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    display: none;
+}
+
+.sm-bg-image {
+    width: 100%;
+    height: 100%;
+    display: block;
     background-image: url('https://i.postimg.cc/hPLHfgGR/Bez-imeni-31.png');
-    background-size: cover; background-position: center; filter: brightness(0.3); 
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3);
 }
 
 @media (min-width: 768px) {
-    .sm-bg-video { display: block; }
-    .sm-bg-image { display: none; }
-    #sm-block-wrapper { padding: 20px 40px 100px 40px; }
-    
+    .sm-bg-video {
+        display: block;
+    }
+
+    .sm-bg-image {
+        display: none;
+    }
+
+    #sm-block-wrapper {
+        padding: 20px 40px 100px 40px;
+    }
+
     /* Возвращаем нормальные размеры для десктопа, там нет проблемы с адресной строкой */
-    .sm-bg-layer { top: 0; height: 100vh; }
+    .sm-bg-layer {
+        top: 0;
+        height: 100vh;
+    }
 }
 
-.sm-content-container { position: relative; z-index: 10; width: 100%; max-width: 1200px; margin-top: 50px; }
+.sm-content-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 50px;
+}
 
 #posts-container {
-    display: flex; flex-wrap: wrap; gap: 30px;
-    justify-content: center; width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
 }
 
 .sm-card {
-    display: block; width: 100%; max-width: 400px;
-    text-decoration: none; background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease; transform: translateY(0);
+    transition: all 0.3s ease;
+    transform: translateY(0);
 }
 
-.sm-card:hover { 
-    transform: translateY(-10px); 
+.sm-card:hover {
+    transform: translateY(-10px);
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), 0 0 40px rgba(0, 0, 0, 0.5);
-    border-color: rgba(255,255,255,0.3);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.sm-card img { width: 100%; height: auto; display: block; }
+.sm-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-.sm-card-content { padding: 25px; }
+.sm-card-content {
+    padding: 25px;
+}
 
 .sm-card-title {
-    font-family: 'Oswald', sans-serif; font-size: 24px; margin: 0 0 15px 0;
-    color: #8f8f8f; transition: color 0.3s;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    color: #8f8f8f;
+    transition: color 0.3s;
     text-transform: none;
 }
 
 @media (min-width: 768px) {
-    .sm-card-title { color: #bfbfbf; }
+    .sm-card-title {
+        color: #bfbfbf;
+    }
 }
-.sm-card:hover .sm-card-title { color: #fff; }
+
+.sm-card:hover .sm-card-title {
+    color: #fff;
+}
 
 .sm-card-desc {
-    font-family: 'Roboto', sans-serif; font-size: 16px; line-height: 1.6;
-    margin: 0 0 20px 0; color: #a0a0a0; transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    color: #a0a0a0;
+    transition: color 0.3s;
 }
-.sm-card:hover .sm-card-desc { color: #d1d5db; }
 
-.sm-card-date { font-family: 'Roboto', sans-serif; font-size: 14px; color: #777; }
+.sm-card:hover .sm-card-desc {
+    color: #d1d5db;
+}
 
-#sm-block-wrapper, #sm-block-wrapper a {
+.sm-card-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+#sm-block-wrapper,
+#sm-block-wrapper a {
     cursor: url('https://i.postimg.cc/90mv77p9/banana-world-1-cropped.png') 9 2, auto !important;
 }
 
@@ -330,83 +428,300 @@ body, a, button, .sm-hamburger, .sm-logo-link, .sm-menu-item {
    ========================================================================== */
 /* Скрываем настоящую форму Tilda */
 .uc-hidden-form-wrapp {
-  position: absolute; top: -9999px; left: -9999px;
-  opacity: 0; height: 0; width: 0; overflow: hidden;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
 }
 
 .t123 .custom-footer,
 .t123 .custom-footer * {
-  cursor: url('https://i.postimg.cc/90mv77p9/banana-world-1-cropped.png') 9 2, auto;
+    cursor: url('https://i.postimg.cc/90mv77p9/banana-world-1-cropped.png') 9 2, auto;
 }
-.t123 .subscribe-form input { cursor: text; }
-.t123 .subscribe-form button { cursor: pointer; }
+
+.t123 .subscribe-form input {
+    cursor: text;
+}
+
+.t123 .subscribe-form button {
+    cursor: pointer;
+}
 
 /* --- ИЗМЕНЕНИЕ 1: НАСТРОЙКА ФОНА ДЛЯ ДЕКСТОПА --- */
 .t123 .custom-footer {
-  position: relative; width: 100%;
-  padding: 80px 40px; box-sizing: border-box;
-  display: flex; justify-content: center; align-items: center;
-  overflow: hidden;
-  
-  background-image: url('https://i.postimg.cc/VLq9w71R/Montaznaa-oblast-2.jpg');
-  background-size: contain; /* <-- ЗАПОЛНЕНИЕ ЭКРАНА */
-  background-position: center center !important;
-  background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background-image: url('https://i.postimg.cc/VLq9w71R/Montaznaa-oblast-2.jpg');
+    background-size: contain;
+    /* <-- ЗАПОЛНЕНИЕ ЭКРАНА */
+    background-position: center center !important;
+    background-repeat: no-repeat;
 }
 
 .t123 .custom-footer::before {
-  content: ''; position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
 .t123 .footer-content {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; align-items: center;
-  width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 /* --- ИЗМЕНЕНИЕ 2: УМЕНЬШАЕМ МАКСИМАЛЬНУЮ ШИРИНУ ФОРМЫ --- */
 .t123 .subscribe-form {
-  margin-bottom: 80px; /* Уменьшил отступ после удаления соцсетей */
-  border-bottom: 2px solid #555; display: flex;
-  width: 100%; 
-  max-width: 350px; /* <-- ФОРМА СТАЛА КОРОЧЕ */
+    margin-bottom: 80px;
+    /* Уменьшил отступ после удаления соцсетей */
+    border-bottom: 2px solid #555;
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    /* <-- ФОРМА СТАЛА КОРОЧЕ */
 }
 
 /* --- ИЗМЕНЕНИЕ 3: ЦВЕТ ВВЕДЕННОГО ТЕКСТА --- */
 .t123 .subscribe-form input {
-  flex-grow: 1; background: none; border: none; outline: none;
-  padding: 10px 0;
-  font-family: 'Oswald', sans-serif; font-size: 1.1em;
-  color: #cccccc; /* <-- ЦВЕТ ВВЕДЕННОГО ТЕКСТА СЕРЫЙ */
-  letter-spacing: 1px;
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    color: #cccccc;
+    /* <-- ЦВЕТ ВВЕДЕННОГО ТЕКСТА СЕРЫЙ */
+    letter-spacing: 1px;
 }
-.t123 .subscribe-form input::placeholder { color: #777; opacity: 1; }
 
-.t123 .subscribe-form button { background: none; border: none; outline: none; color: #fff; font-size: 2em; transition: transform 0.2s ease; }
-.t123 .subscribe-form button:hover { transform: translateX(5px); }
+.t123 .subscribe-form input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+.t123 .subscribe-form button {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 2em;
+    transition: transform 0.2s ease;
+}
+
+.t123 .subscribe-form button:hover {
+    transform: translateX(5px);
+}
 
 /* Стили копирайта (без изменений) */
 .t123 .copyright {
-  margin-top: 130px; /* <-- ИЗМЕНИТЕ ЭТО ЧИСЛО, ЧТОБЫ УВЕЛИЧИТЬ ИЛИ УМЕНЬШИТЬ ОТСТУП */
+    margin-top: 130px;
+    /* <-- ИЗМЕНИТЕ ЭТО ЧИСЛО, ЧТОБЫ УВЕЛИЧИТЬ ИЛИ УМЕНЬШИТЬ ОТСТУП */
 }
-.t123 .copyright span { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 0.9em; font-weight: 700; letter-spacing: 2px; text-decoration: none; background-image: url('https://www.transparenttextures.com/patterns/subtle-grunge.png'); -webkit-background-clip: text; background-clip: text; color: transparent !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.5), 0 0 3px rgba(255,255,255,0.1); opacity: 0.7; transition: all 0.3s ease; }
-.t123 .copyright:hover span { opacity: 1; text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5); }
+
+.t123 .copyright span {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background-image: url('https://www.transparenttextures.com/patterns/subtle-grunge.png');
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 3px rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.t123 .copyright:hover span {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
 /* --- ИЗМЕНЕНИЕ 4: НАСТРОЙКА ФОНА ДЛЯ МОБИЛЬНЫХ --- */
 @media (max-width: 767px) {
-  .t123 .custom-footer {
-    background-image: url('https://i.postimg.cc/YCGXsftc/photo-2025-11-09-03-35-35.jpg');
-    background-size: contain; /* <-- ПОКАЗАТЬ ЦЕЛИКОМ */
-    background-repeat: no-repeat;
-    /* --- ВОТ НОВАЯ СТРОКА ДЛЯ ОТСТУПОВ НА МОБИЛЬНЫХ --- */
-    /* 
+    .t123 .custom-footer {
+        background-image: url('https://i.postimg.cc/YCGXsftc/photo-2025-11-09-03-35-35.jpg');
+        background-size: contain;
+        /* <-- ПОКАЗАТЬ ЦЕЛИКОМ */
+        background-repeat: no-repeat;
+        /* --- ВОТ НОВАЯ СТРОКА ДЛЯ ОТСТУПОВ НА МОБИЛЬНЫХ --- */
+        /* 
       Было 80px сверху и снизу.
       Теперь: 40px сверху, 20px по бокам, 40px снизу.
       Можете изменить 40px на любое другое число.
     */
-    padding: 30px 40px;
-  }
+        padding: 30px 40px;
+    }
+}
+
+/* ====================================================
+   POSTS BLOCK (FEED)
+   ==================================================== */
+#sm-block-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 100px 20px;
+    box-sizing: border-box;
+}
+
+.sm-bg-layer {
+    position: fixed;
+    top: -10vh;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #000;
+}
+
+.sm-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    display: none;
+}
+
+.sm-bg-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url('https://i.postimg.cc/hPLHfgGR/Bez-imeni-31.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3);
+}
+
+@media (min-width: 768px) {
+    .sm-bg-video {
+        display: block;
+    }
+
+    .sm-bg-image {
+        display: none;
+    }
+
+    #sm-block-wrapper {
+        padding: 20px 40px 100px 40px;
+    }
+
+    .sm-bg-layer {
+        top: 0;
+        height: 100vh;
+    }
+}
+
+.sm-content-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+#posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.sm-card {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.sm-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), 0 0 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.sm-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sm-card-content {
+    padding: 25px;
+}
+
+.sm-card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    color: #8f8f8f;
+    transition: color 0.3s;
+    text-transform: none;
+}
+
+@media (min-width: 768px) {
+    .sm-card-title {
+        color: #bfbfbf;
+    }
+}
+
+.sm-card:hover .sm-card-title {
+    color: #fff;
+}
+
+.sm-card-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    color: #a0a0a0;
+    transition: color 0.3s;
+}
+
+.sm-card:hover .sm-card-desc {
+    color: #d1d5db;
+}
+
+.sm-card-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+#sm-block-wrapper,
+#sm-block-wrapper a {
+    cursor: url('https://i.postimg.cc/90mv77p9/banana-world-1-cropped.png') 9 2, auto !important;
 }
