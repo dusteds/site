@@ -237,3 +237,51 @@ document.addEventListener('DOMContentLoaded', function () {
         loadTildaPosts();
     }
 });
+/* ====================================================
+   FOOTER & EMAIL FORM PROXY
+   ==================================================== */
+function initFooter() {
+    var hoverSound = new Audio('https://files.catbox.moe/l92p5m.mp3');
+    var clickableElements = document.querySelectorAll('.t123 .subscribe-form button');
+
+    clickableElements.forEach(function (element) {
+        element.addEventListener('mouseenter', function () {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(function (e) { });
+        });
+    });
+
+    var customInput = document.querySelector('.t123 .custom-email-input');
+    if (customInput) {
+        function updatePlaceholder() {
+            if (window.innerWidth <= 767) {
+                customInput.placeholder = 'YOUR E-MAIL FOR UPDATES';
+            } else {
+                customInput.placeholder = 'YOUR E-MAIL FOR NEWSLETTER';
+            }
+        }
+        updatePlaceholder();
+        window.addEventListener('resize', updatePlaceholder);
+    }
+
+    var customButton = document.querySelector('.t123 .custom-submit-button');
+    var realFormWrapper = document.querySelector('.uc-hidden-form-wrapp');
+    if (customButton && realFormWrapper && customInput) {
+        var realInput = realFormWrapper.querySelector('input[name="Email"]');
+        var realButton = realFormWrapper.querySelector('.t-submit');
+        customButton.addEventListener('click', function () {
+            if (realInput && realButton) {
+                realInput.value = customInput.value;
+                realButton.click();
+                customInput.placeholder = 'THANK YOU!';
+                customInput.value = '';
+            }
+        });
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFooter);
+} else {
+    initFooter();
+}
