@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var menuLinks = document.querySelectorAll('.sm-menu-item');
 
     // Создаем базовый объект аудио для предзагрузки
-    var baseAudio = new Audio('https://files.catbox.moe/l92p5m.mp3');
+    var baseAudio = new Audio('https://dusteds.github.io/site/hover.mp3');
     baseAudio.preload = 'auto';
 
     function toggleMenu() {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
    2. Dynamic Posts from Tilda RSS Feed
    ========================================================================== */
 // ИСПРАВЛЕНИЕ ЗВУКА (клонирование для полифонии)
-var basePostSound = new Audio('https://files.catbox.moe/p9pqjx.mp3');
+var basePostSound = new Audio('https://dusteds.github.io/site/post-hover.mp3');
 basePostSound.preload = 'auto';
 
 function playPostSound() {
@@ -126,7 +126,7 @@ if (document.readyState === 'loading') {
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', function () {
 
-    const hoverSound = new Audio('https://files.catbox.moe/l92p5m.mp3');
+    const hoverSound = new Audio('https://dusteds.github.io/site/hover.mp3');
     // Убрали иконки из списка "озвучиваемых" элементов
     const clickableElements = document.querySelectorAll('.t123 .subscribe-form button');
 
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ====================================================
    POSTS FEED & RSS LOADER
    ==================================================== */
-    var basePostSound = new Audio('https://files.catbox.moe/p9pqjx.mp3');
+    var basePostSound = new Audio('https://dusteds.github.io/site/post-hover.mp3');
     basePostSound.preload = 'auto';
 
     function playPostSound() {
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
    FOOTER & EMAIL FORM PROXY
    ==================================================== */
 function initFooter() {
-    var hoverSound = new Audio('https://files.catbox.moe/l92p5m.mp3');
+    var hoverSound = new Audio('https://dusteds.github.io/site/hover.mp3');
     var clickableElements = document.querySelectorAll('.t123 .subscribe-form button');
 
     clickableElements.forEach(function (element) {
