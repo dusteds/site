@@ -282,29 +282,25 @@ button,
     box-sizing: border-box;
 }
 
-/* ИСПРАВЛЕНИЕ ФОНА ДЛЯ МОБИЛЬНЫХ */
 .sm-bg-layer {
     position: fixed;
-    top: -10vh;
-    /* Выносим за пределы экрана сверху */
+    top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 120vh;
-    /* Делаем высоту с запасом, чтобы скрытие адресной строки не дергало фон */
+    height: 100%;
     z-index: 0;
     pointer-events: none;
     background-color: #000;
-}
-
-.sm-bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4);
-    display: none;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .sm-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: block;
@@ -312,6 +308,17 @@ button,
     background-size: cover;
     background-position: center;
     filter: brightness(0.3);
+}
+
+.sm-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -325,12 +332,6 @@ button,
 
     #sm-block-wrapper {
         padding: 20px 40px 100px 40px;
-    }
-
-    /* Возвращаем нормальные размеры для десктопа, там нет проблемы с адресной строкой */
-    .sm-bg-layer {
-        top: 0;
-        height: 100vh;
     }
 }
 
@@ -591,24 +592,23 @@ button,
 
 .sm-bg-layer {
     position: fixed;
-    top: -10vh;
+    top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 120vh;
+    height: 100%;
     z-index: 0;
     pointer-events: none;
     background-color: #000;
-}
-
-.sm-bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4);
-    display: none;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .sm-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: block;
@@ -616,6 +616,17 @@ button,
     background-size: cover;
     background-position: center;
     filter: brightness(0.3);
+}
+
+.sm-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -629,11 +640,6 @@ button,
 
     #sm-block-wrapper {
         padding: 20px 40px 100px 40px;
-    }
-
-    .sm-bg-layer {
-        top: 0;
-        height: 100vh;
     }
 }
 

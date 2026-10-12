@@ -285,3 +285,22 @@ if (document.readyState === 'loading') {
 } else {
     initFooter();
 }
+
+function initBgVideo() {
+    var video = document.querySelector('.sm-bg-video');
+    if (video) {
+        video.muted = true;
+        video.playsInline = true;
+        var playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(function() {
+                document.addEventListener('click', function() { video.play(); }, { once: true });
+            });
+        }
+    }
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBgVideo);
+} else {
+    initBgVideo();
+}
